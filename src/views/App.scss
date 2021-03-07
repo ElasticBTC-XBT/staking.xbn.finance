@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+body {
+  font-family: 'Montserrat', sans-serif;
+  word-break: break-word;
+}
+
+.text-mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.display-5 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.display-6 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.lottery-pot-table {
+  th {
+    font-size: 0.8rem;
+    padding-left: 0;
+    padding-right: 0;
+    font-weight: 500;
+    &:first-child {
+      text-align: left;
+    }
+    &:last-child {
+      text-align: right;
+    }
+  }
+  td {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    &:first-child {
+      text-align: left;
+    }
+    &:last-child {
+      text-align: right;
+    }
+  }
+}
+
+.lottery-number-set {
+  display: flex;
+  justify-content: center;
+  .ball-container-1, .ball-container-2, .ball-container-3, .ball-container-4 {
+    display: flex;
+    animation: bob 3s ease infinite;
+    animation-fill-mode: both;
+  }
+  .build-in-1,  {
+
+  }
+  .ball-container-1 {
+    animation-delay: 0.5s;
+    .build-in-1 {
+      position: relative;
+      bottom: .3em;
+      animation-delay: .2s;
+    }
+  }
+  .ball-container-2 {
+    animation-delay: 1s;
+    .build-in-2 {
+      position: relative;
+      top: .3em;
+      animation-delay: .3s;
+    }
+  }
+  .ball-container-3 {
+    animation-delay: 2s;
+    .build-in-3 {
+      position: relative;
+      top: .5em;
+      animation-delay: .5s;
+    }
+  }
+  .ball-container-4 {
+    animation-delay: 3s;
+    .build-in-4 {
+      animation-delay: .6s;
+    }
+  }
+
+  .ball {
+    padding: 1em;
+    background-color: #EEB339;
+    box-shadow: inset -10px -10px 0px 0px #daa746, 0px 9px 30px 0px rgba(0,0,255,0.15);
+    color: #fff;
+    font-size: 2em;
+    width: 2.75em;
+    height: 2.75em;
+    border-radius: 100%;
+    text-align: center;
+    line-height: .8em;
+    margin: 2em .15em;
+    animation: build-in .5s;
+    animation-timing-function: cubic-bezier(.17,.51,.48,1.39);
+    animation-fill-mode: both;
+    @media (max-width: 750px) {
+      font-size: 1.5em;
+    }
+    @media (max-width: 414px) {
+      font-size: 1em;
+      box-shadow: inset -5px -5px 0px 0px #E1A730, 0px 9px 30px 0px rgba(0,0,255,0.15);
+    }
+  }
+}
+/* define the build-in animation */
+@keyframes build-in {
+  from {
+    transform: scale(.0) translateY(3em);
+  }
+  to {
+    transform: scale(1) translateY(0);
+  }
+}
+/* define the bobbing looped animation */
+@keyframes bob {
+  0% {
+    transform: translateY(.4em);
+  }
+  50% {
+    transform: translateY(-.4em);
+  }
+  100% {
+    transform: translateY(.4em);
+  }
+}
+
+.navigation-bottom {
+  bottom: 0;
+  display: flex;
+  margin: 15px;
+  position: absolute;
+}
